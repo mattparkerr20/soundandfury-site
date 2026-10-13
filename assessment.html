@@ -248,6 +248,28 @@ table.cal td.short { background: var(--red); color: #fff; }
 @media (max-width: 960px) { .ex-grid { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .checks li { grid-template-columns: 80px minmax(0, 1fr); gap: 12px; } }
 .question .fee-num { font-size: clamp(36px, 5vw, 60px); margin: 0 0 18px; }
+
+/* Review revisions */
+.ledger .own { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+.ledger tr.sub td { font-family: var(--display); font-weight: 700; padding-top: 12px; }
+.verdict { margin: 56px 0 32px; background: #fff; border: 2px solid var(--green); }
+.verdict .rec { font-family: var(--display); font-weight: 800; font-stretch: 112%; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.15; color: var(--green); margin: 0 0 24px; }
+.verdict h4 { font-family: var(--display); font-weight: 700; font-size: 16px; margin: 0 0 10px; }
+.verdict ul { margin: 0; padding-left: 20px; }
+.verdict li { margin-bottom: 8px; font-size: 17px; }
+.v-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 40px; margin-bottom: 24px; }
+.verdict tr.pick td { font-weight: 700; background: var(--ledger); }
+.verdict table td { font-size: 16px; padding: 8px 6px; }
+.actions { margin: 0 0 8px; padding-left: 22px; }
+.actions li { margin-bottom: 8px; font-size: 17px; }
+.ex-grid { margin-top: 0 !important; }
+.ledger .note + .note { margin-top: 8px; }
+ul.plain { margin: 0 0 16px; padding-left: 20px; }
+ul.plain li { margin-bottom: 6px; }
+.confid { margin: 40px 0 0; padding: 18px 22px; border-left: 4px solid var(--green); background: var(--ledger); font-size: 17px; max-width: 46em; }
+@media (max-width: 960px) { .v-grid { grid-template-columns: 1fr; gap: 24px; } }
+.page-head h1 { overflow-wrap: break-word; }
+@media (max-width: 640px) { .page-head h1 { font-size: clamp(30px, 9vw, 40px); } }
 </style>
 </head>
 <body>
@@ -279,19 +301,19 @@ table.cal td.short { background: var(--red); color: #fff; }
       <div class="two deliver">
         <div>
           <h3>A consolidated balance sheet</h3>
-          <p>Every account, entity, trust, and private holding in one view, organized by asset class, owner, custodian, liquidity, and cost. It reports what the family holds today and becomes the foundation for every decision that follows.</p>
+          <p>Every holding appears once, organized by asset class, with the owner and custodian of each and every liability netted against it. It shows the family's net worth as of a stated date and marks which values are estimates.</p>
         </div>
         <div>
-          <h3>The all-in cost, in one number</h3>
-          <p>Advisory fees, fund management fees, carried interest, trustee fees, and the costs buried inside products, added up to one annual dollar figure and one percentage. Few families have ever seen it.</p>
+          <h3>The all-in cost</h3>
+          <p>Advisory fees, fund expenses, private fund management fees, real estate management, and trustee fees, each shown with what it is charged on. Recurring costs are separated from carried interest, which varies from year to year.</p>
         </div>
         <div>
           <h3>A liquidity calendar</h3>
-          <p>Capital calls on unfunded commitments, lockups and redemption windows, loan maturities, estimated taxes, and expected distributions on a single timeline, so the family sees a cash crunch coming before it arrives.</p>
+          <p>Capital calls on unfunded commitments, loan maturities, estimated taxes, and expected distributions on one timeline, with the family's minimum cash reserve marked, so a funding gap shows up months before it arrives.</p>
         </div>
         <div>
           <h3>A continuity test</h3>
-          <p>One structured conversation about who signs, who succeeds, where the originals are, and who else knows. It answers a plain question: if the person who knows where everything is were gone tomorrow, who could step in? Every uncertain answer goes on the gap list.</p>
+          <p>One structured conversation about who signs, who succeeds, where the originals are, and who else knows. Each answer is recorded as the family reports it, and every uncertain answer goes on the gap list.</p>
         </div>
         <div>
           <h3>A governance review</h3>
@@ -299,88 +321,153 @@ table.cal td.short { background: var(--red); color: #fff; }
         </div>
         <div>
           <h3>A readiness verdict</h3>
-          <p>A direct answer on whether a single family office makes sense, what it would cost to run each year, and how it compares with the realistic alternatives, such as a multi-family office or better reporting from the family's current advisors.</p>
+          <p>A recommendation on what structure fits: a dedicated family office, a lean or outsourced model, or better arrangements with the family's current advisors. It compares the annual cost of each and lists the first actions to take.</p>
         </div>
       </div>
     </div>
   </section>
 
-
   <section class="exhibits">
     <div class="wrap">
       <h2 class="display">Inside the report</h2>
-      <p class="lede">Four pages from an illustrative report for a family with $233.9 million spread across eight places.</p>
+      <p class="lede">Five pages from an illustrative report. The family has holdings across two custodians, six banks, two trusts, fourteen private funds, three real estate LLCs, and an operating company. Values are as of September 30, 2026.</p>
+
+      <div class="ledger verdict">
+        <p class="ledger-title">Readiness verdict</p>
+        <p class="rec">Recommendation: a lean family office, not a fully staffed one.</p>
+        <div class="v-grid">
+          <div>
+            <h4>Why</h4>
+            <ul>
+              <li>Fourteen private funds and a dynasty trust create recurring work that none of the family's current advisors coordinates.</li>
+              <li>The $148.9M held outside the operating company does not yet justify a full staff.</li>
+              <li>A sale of the operating company would change the answer, so the verdict should be revisited at that point.</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Estimated annual cost of each option</h4>
+            <table>
+              <tbody>
+                <tr><td>Fully staffed family office</td><td class="amt">$1.4M to $1.8M</td></tr>
+                <tr class="pick"><td>Lean office: one investment lead, outsourced accounting and reporting</td><td class="amt">$0.7M to $0.9M</td></tr>
+                <tr><td>Multi-family office</td><td class="amt">$0.8M to $1.0M</td></tr>
+                <tr><td>Current advisors plus consolidated reporting</td><td class="amt">$0.1M to $0.2M added</td></tr>
+              </tbody>
+            </table>
+            <p class="note">Of the $1.76M in current recurring costs, about $0.5M of wealth management fees would be replaced. Private fund, real estate, and trustee costs continue under every option.</p>
+          </div>
+        </div>
+        <h4>First actions</h4>
+        <ol class="actions">
+          <li>Arrange refinancing or another source for the $6.5M real estate loan due July 2027. Owner: the family and its lender.</li>
+          <li>Add backup signers and documented backup access for the entities and bank accounts. Owner: the estate attorney, within 60 days.</li>
+          <li>Engage a consolidated reporting provider. Owner: the family, within 90 days.</li>
+        </ol>
+        <p class="note">Before implementation, the family should agree on who leads the office and what it is responsible for.</p>
+      </div>
+
       <div class="ex-grid">
         <div class="ledger">
           <p class="ledger-title">Consolidated balance sheet</p>
           <table>
             <tbody>
-              <tr><td>Brokerage, custodian A</td><td class="amt">$41.2M</td></tr>
-              <tr><td>Brokerage, custodian B</td><td class="amt">$18.7M</td></tr>
-              <tr><td>Revocable trust</td><td class="amt">$12.4M</td></tr>
-              <tr><td>Dynasty trust</td><td class="amt">$26.9M</td></tr>
-              <tr><td>Operating company, 62%</td><td class="amt">$85.0M</td></tr>
-              <tr><td>Private funds (14)</td><td class="amt">$22.6M</td></tr>
-              <tr><td>Real estate LLCs (3)</td><td class="amt">$17.3M</td></tr>
-              <tr><td>Cash at six banks</td><td class="amt">$9.8M</td></tr>
-              <tr class="total"><td>Total</td><td class="amt">$233.9M</td></tr>
+              <tr><td>Cash, six banks<span class="own">Individuals and revocable trust</span></td><td class="amt">$9.8M</td></tr>
+              <tr><td>Marketable securities, two custodians<span class="own">Individuals and both trusts</span></td><td class="amt">$99.2M</td></tr>
+              <tr><td>Private funds, fourteen funds at reported NAV<span class="own">Dynasty trust and individuals</span></td><td class="amt">$22.6M</td></tr>
+              <tr><td>Real estate, three LLCs at appraised value<span class="own">Held through LLCs</span></td><td class="amt">$17.3M</td></tr>
+              <tr><td>Operating company, the family's 62% interest<span class="own">Estimated value</span></td><td class="amt">$85.0M</td></tr>
+              <tr class="sub"><td>Total assets</td><td class="amt">$233.9M</td></tr>
+              <tr><td>Real estate loan, due July 2027</td><td class="amt">($6.5M)</td></tr>
+              <tr class="total"><td>Net worth</td><td class="amt">$227.4M</td></tr>
             </tbody>
           </table>
+          <p class="note">Each holding appears once. Not shown on the balance sheet: $15.0M of unfunded private fund commitments.</p>
         </div>
         <div class="ledger cost">
-          <p class="ledger-title">All-in cost</p>
-          <p class="big-num">$1.90M a year</p>
-          <p class="sub">1.28% of the $148.9M held outside the operating company</p>
+          <p class="ledger-title">All-in cost, 12 months ended September 30, 2026</p>
+          <p class="big-num">$1.76M a year</p>
+          <p class="sub">Recurring costs, 1.18% of the $148.9M held outside the operating company</p>
           <table>
             <tbody>
-              <tr><td>Wealth managers, custodians A and B</td><td class="amt">$0.51M</td></tr>
-              <tr><td>Private fund fees and carry</td><td class="amt">$0.83M</td></tr>
-              <tr><td>Real estate management</td><td class="amt">$0.21M</td></tr>
-              <tr><td>Trustee and administration</td><td class="amt">$0.17M</td></tr>
-              <tr><td>Fund expenses inside brokerage accounts</td><td class="amt">$0.18M</td></tr>
-              <tr class="total"><td>Total</td><td class="amt">$1.90M</td></tr>
+              <tr><td>Wealth management fees<span class="own">0.51% of $99.2M managed</span></td><td class="amt">$0.51M</td></tr>
+              <tr><td>Fund expenses inside managed accounts<span class="own">0.18% of $99.2M</span></td><td class="amt">$0.18M</td></tr>
+              <tr><td>Private fund management fees<span class="own">1.5% of $40M committed</span></td><td class="amt">$0.60M</td></tr>
+              <tr><td>Private fund expenses<span class="own">Charged by the funds</span></td><td class="amt">$0.09M</td></tr>
+              <tr><td>Real estate management<span class="own">8% of $2.63M in rent collected</span></td><td class="amt">$0.21M</td></tr>
+              <tr><td>Corporate trustee<span class="own">0.45% of the $26.9M dynasty trust</span></td><td class="amt">$0.12M</td></tr>
+              <tr><td>Entity accounting and administration</td><td class="amt">$0.05M</td></tr>
+              <tr class="total"><td>Recurring total</td><td class="amt">$1.76M</td></tr>
             </tbody>
           </table>
+          <p class="note">Not included above: $0.14M of carried interest realized during the period, which varies from year to year.</p>
         </div>
       </div>
+
       <div class="ledger cal-box">
         <p class="ledger-title">Liquidity calendar, $ millions</p>
         <div class="scroll">
           <table class="cal">
-            <thead><tr><th scope="col"></th><th scope="col">Q1 2027</th><th scope="col">Q2 2027</th><th scope="col" class="hit">Q3 2027</th><th scope="col">Q4 2027</th><th scope="col">2028</th></tr></thead>
+            <thead><tr><th scope="col"></th><th scope="col">Q1 2027</th><th scope="col">Q2 2027</th><th scope="col" class="hit">Q3 2027</th><th scope="col">Q4 2027</th><th scope="col">2028, full year</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Capital calls</th><td>(1.4)</td><td>(2.1)</td><td class="hit">(0.9)</td><td>(1.8)</td><td>(4.5)</td></tr>
-              <tr><th scope="row">Distributions</th><td>0.6</td><td>0.3</td><td class="hit">1.9</td><td>0.4</td><td>3.2</td></tr>
+              <tr><th scope="row">Capital calls, notified</th><td>(1.4)</td><td></td><td class="hit"></td><td></td><td></td></tr>
+              <tr><th scope="row">Capital calls, estimated</th><td></td><td>(2.1)</td><td class="hit">(0.9)</td><td>(1.8)</td><td>(4.5)</td></tr>
+              <tr><th scope="row">Distributions, estimated</th><td>0.6</td><td>0.3</td><td class="hit">1.9</td><td>0.4</td><td>3.2</td></tr>
               <tr><th scope="row">Estimated taxes</th><td>(0.8)</td><td>(0.8)</td><td class="hit">(0.8)</td><td>(0.8)</td><td>(3.4)</td></tr>
               <tr><th scope="row">Real estate loan maturity</th><td></td><td></td><td class="hit">(6.5)</td><td></td><td></td></tr>
               <tr class="net"><th scope="row">Net cash flow</th><td>(1.6)</td><td>(2.6)</td><td class="hit">(6.3)</td><td>(2.2)</td><td>(4.7)</td></tr>
-              <tr class="net"><th scope="row">Cash remaining from $9.8M</th><td>8.2</td><td>5.6</td><td class="hit short">(0.7)</td><td>(2.9)</td><td>(7.6)</td></tr>
+              <tr class="net"><th scope="row">Cash, or (funding gap), from $9.8M</th><td>8.2</td><td>5.6</td><td class="hit short">(0.7)</td><td>(2.9)</td><td>(7.6)</td></tr>
             </tbody>
           </table>
         </div>
-        <p class="note">The family's cash runs out in the third quarter of 2027, when a real estate loan matures in the same quarter as a capital call and an estimated tax payment.</p>
+        <p class="note">Without asset sales, refinancing, or other funding, cash falls through the family's $2.0M minimum reserve and develops a $0.7M funding gap in the third quarter of 2027. The loan is due in July, and most third-quarter distributions are not expected until September, so the family has about nine months to refinance, sell securities, or arrange a credit line.</p>
+        <p class="note">Capital calls draw down the $15.0M of unfunded commitments, leaving $4.3M after 2028, assuming no new commitments. The calendar excludes family spending, operating company distributions, and net rental income.</p>
       </div>
+
       <div class="ledger cont-box">
         <p class="ledger-title">Continuity test</p>
         <ul class="checks">
-          <li><span class="st gap">Gap</span>Only one family member can sign for four of the six entities.</li>
-          <li><span class="st gap">Gap</span>No one else holds the logins for the six bank accounts.</li>
-          <li><span class="st ok">Covered</span>Successor trustees are named for both trusts and have accepted.</li>
-          <li><span class="st gap">Gap</span>Two of the fourteen fund managers have no contact besides the founder.</li>
-          <li><span class="st ok">Covered</span>Original trust and LLC documents are held by counsel.</li>
+          <li><span class="st gap">Gap</span>One family member is the only signer for four of the six entities.</li>
+          <li><span class="st gap">Gap</span>No documented backup access to the six bank accounts.</li>
+          <li><span class="st ok">Reported</span>Successor trustees are named for both trusts.</li>
+          <li><span class="st gap">Gap</span>Two fund managers have no contact besides the founder.</li>
+          <li><span class="st ok">Reported</span>Counsel holds the original trust and LLC documents.</li>
         </ul>
+        <p class="note">These findings record what the family reported in conversation and have not been checked against the governing documents. The governance and document review verifies them.</p>
       </div>
     </div>
   </section>
+
   <section>
+    <div class="wrap two">
+      <div>
+        <h2 class="display" style="margin-bottom: 28px">Who it is for</h2>
+        <p>Families whose wealth has outgrown the way it is managed. That usually means some combination of:</p>
+        <ul class="plain">
+          <li>several wealth managers or custodians</li>
+          <li>private funds or direct investments</li>
+          <li>trusts and family entities</li>
+          <li>a business that has been sold or may be</li>
+          <li>a generation preparing to take over</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="display" style="margin-bottom: 28px">Timing and scope</h2>
+        <p>The report is delivered about six weeks after the statements arrive. The engagement includes the introductory conversation, one 90-minute conversation on governance and continuity, an in-person presentation, and one round of revisions.</p>
+        <p>Missing statements delay the work but do not stop it. The report notes anything that could not be confirmed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0">
     <div class="wrap">
       <h2 class="display" style="margin-bottom: 56px">How it works</h2>
       <ol class="steps">
-        <li><h3>Introductory conversation</h3><p>We discuss the family, its holdings, and its advisors, and agree on the scope and the fee.</p></li>
-        <li><h3>Statements</h3><p>The family provides recent account and fund statements, or authorizes me to request them from custodians and advisors directly. No legal documents are required.</p></li>
+        <li><h3>Introductory conversation</h3><p>About 45 minutes on the family, its holdings, and its advisors. Nothing needs to be prepared. We agree on the scope and the fee.</p></li>
+        <li><h3>Statements</h3><p>The family provides recent account and fund statements through a secure file share I set up, or authorizes me to request them from custodians and advisors directly.</p></li>
         <li><h3>Consolidation and one conversation</h3><p>I build the balance sheet, the cost summary, and the liquidity calendar, and I spend about 90 minutes with the family on governance and continuity.</p></li>
-        <li><h3>Report and presentation</h3><p>I present the findings to the family in person and leave the written report and the balance sheet with them.</p></li>
+        <li><h3>Report and presentation</h3><p>I present the findings and the verdict to the family in person and leave the written report and the balance sheet with them.</p></li>
       </ol>
+      <p class="confid">Please do not send statements, account numbers, or passwords by email. I set up a secure file share for each family, and documents are deleted at the end of the engagement unless the family asks me to keep them.</p>
     </div>
   </section>
 
@@ -389,12 +476,17 @@ table.cal td.short { background: var(--red); color: #fff; }
       <div>
         <h2 class="display" style="margin-bottom: 28px">Fee</h2>
         <p class="fee-num">One fixed fee</p>
-        <p>I quote the fee after the first conversation, it is agreed before work begins, and it does not change with the size of the family's assets. I do not manage assets, sell investment products, or accept commissions.</p>
+        <p>The fee reflects the scope: the number of accounts, entities, and funds, and the meetings involved. It is quoted after the first conversation, agreed before work begins, and is not a percentage of assets. I do not manage assets or sell investment products.</p>
       </div>
       <div>
         <h2 class="display" style="margin-bottom: 28px">If the answer is yes</h2>
-        <p>I can help the family design the office, hire its staff, and select its service providers, and I can serve as its Chief Investment Officer.</p>
-        <p>Because that role is a possible outcome of the assessment, I disclose it at the first meeting so the family can weigh it.</p>
+        <p>I can help the family design the office, hire its staff, and select its service providers. I can also run the office, serve as its Chief Investment Officer, or both. Because that is a possible outcome, the assessment carries four safeguards:</p>
+        <ul class="plain">
+          <li>The fee is the same whatever the verdict.</li>
+          <li>The family owns the report and can use anyone to carry it out.</li>
+          <li>Any role with the family's office is a separate decision, made by the family under a separate agreement.</li>
+          <li>I accept no referral fees or commissions from any provider I recommend.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -403,7 +495,7 @@ table.cal td.short { background: var(--red); color: #fff; }
     <div class="wrap">
       <h2 class="display" style="margin-bottom: 36px">Start with a conversation.</h2>
       <a class="big" href="mailto:matt@soundandfuryconsulting.com">matt@soundandfuryconsulting.com</a>
-      <p>Or call 601-310-4115.</p>
+      <p>Or call <a href="tel:+16013104115">601-310-4115</a>.</p>
     </div>
   </section>
 </main>
@@ -412,12 +504,12 @@ table.cal td.short { background: var(--red); color: #fff; }
   <div class="wrap">
     <div class="row">
       <span>Sound and Fury, LLC, Covington, Louisiana</span>
-      <span><a href="mailto:matt@soundandfuryconsulting.com">matt@soundandfuryconsulting.com</a> &nbsp; 601-310-4115</span>
+      <span><a href="mailto:matt@soundandfuryconsulting.com">matt@soundandfuryconsulting.com</a> &nbsp; <a href="tel:+16013104115">601-310-4115</a></span>
     </div>
     <!-- AFTER REGISTRATION: replace the legal paragraph below with:
     <p class="legal">Sound and Fury, LLC is an investment adviser registered with the State of Louisiana. Registration does not imply a certain level of skill or training. Form ADV Part 2A is available on request.</p>
     -->
-    <p class="legal">Sound &amp; Fury Consulting provides consulting on family office structure, governance, and reporting. It does not provide investment advice, manage assets, or sell securities. The consolidated balance sheet reports a family's existing holdings and does not recommend any investment.</p>
+    <p class="legal">Sound &amp; Fury Consulting provides consulting on family office structure, governance, and reporting. It does not provide investment advice, manage assets, or sell securities. The consolidated balance sheet reports a family's existing holdings and does not recommend any investment. Any role with a family's own office is a separate arrangement made by that family.</p>
   </div>
 </footer>
 </body>

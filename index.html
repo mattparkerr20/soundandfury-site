@@ -225,6 +225,16 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
   .services { grid-template-columns: 1fr; }
   .svc.lead { padding: 28px 20px 32px; }
 }
+.page-head h1 { overflow-wrap: break-word; }
+@media (max-width: 640px) { .page-head h1 { font-size: clamp(30px, 9vw, 40px); } }
+
+.hero h1.quote { font-size: clamp(38px, 6vw, 80px); }
+.hero h1.quote::before { font-size: 1.1em; }
+.hero { padding: 40px 0 72px; }
+.hero .hero-foot { display: block; margin-top: 36px; }
+.hero .hero-foot p { margin-bottom: 28px; }
+.ledger tr.sub td { font-family: var(--display); font-weight: 700; padding-top: 12px; }
+@media (prefers-reduced-motion: no-preference) { .hero h1 span:nth-child(3), .hero h1 span:nth-child(4) { animation: none; } }
 </style>
 </head>
 <body>
@@ -244,10 +254,10 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
 
   <div class="hero">
     <div class="wrap">
-      <h1 class="display quote"><span>Full of sound</span> <span>and fury,</span> <span>signifying</span> <span>nothing.</span></h1>
+      <h1 class="display quote"><span>Full of sound and fury,</span> <span>signifying nothing.</span></h1>
       <p class="attrib">Shakespeare, <i>Macbeth</i></p>
       <div class="hero-foot">
-        <p>That line describes most wealth management. Families sit through quarterly reviews, read the market commentary, and file away thick reports, and they still cannot say what they own or what they pay for it. I start with one balance sheet of everything the family owns, and then I answer whether the family needs a family office.</p>
+        <p>Families with significant wealth hear from a lot of advisors: quarterly reviews, market commentary, and thick reports. Each advisor sees one piece, and no one tells the family what it all adds up to. I start with one balance sheet of everything the family owns, and then I answer whether the family should have a family office.</p>
         <a class="cta" href="assessment.html">How the assessment works</a>
       </div>
     </div>
@@ -272,18 +282,17 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
           <p class="ledger-title">Consolidated balance sheet</p>
           <table>
             <tbody>
-              <tr><td>Brokerage, custodian A</td><td class="amt">$41.2M</td></tr>
-              <tr><td>Brokerage, custodian B</td><td class="amt">$18.7M</td></tr>
-              <tr><td>Revocable trust</td><td class="amt">$12.4M</td></tr>
-              <tr><td>Dynasty trust</td><td class="amt">$26.9M</td></tr>
-              <tr><td>Operating company, 62% interest</td><td class="amt">$85.0M</td></tr>
-              <tr><td>Private funds (14)</td><td class="amt">$22.6M</td></tr>
-              <tr><td>Real estate LLCs (3)</td><td class="amt">$17.3M</td></tr>
-              <tr><td>Cash at six banks</td><td class="amt">$9.8M</td></tr>
-              <tr class="total"><td>Total</td><td class="amt">$233.9M</td></tr>
+              <tr><td>Cash, six banks</td><td class="amt">$9.8M</td></tr>
+              <tr><td>Marketable securities, two custodians</td><td class="amt">$99.2M</td></tr>
+              <tr><td>Private funds, fourteen funds at NAV</td><td class="amt">$22.6M</td></tr>
+              <tr><td>Real estate, three LLCs at appraised value</td><td class="amt">$17.3M</td></tr>
+              <tr><td>Operating company, family's 62% interest</td><td class="amt">$85.0M</td></tr>
+              <tr class="sub"><td>Total assets</td><td class="amt">$233.9M</td></tr>
+              <tr><td>Real estate loan, due July 2027</td><td class="amt">($6.5M)</td></tr>
+              <tr class="total"><td>Net worth</td><td class="amt">$227.4M</td></tr>
             </tbody>
           </table>
-          <p class="note">Illustrative figures for a family with holdings in eight places.</p>
+          <p class="note">Illustrative figures as of September 30, 2026. Each holding appears once; the operating company is an estimate.</p>
         </div>
       </div>
     </div>
@@ -303,11 +312,11 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
         </div>
         <div>
           <h3>Answer the question asked.</h3>
-          <p>The family wants to know whether to build a family office. The report says yes or no, explains why, and shows what each path would cost.</p>
+          <p>The family wants to know whether to build a family office. The report recommends the structure that fits, explains why, and shows what each option would cost.</p>
         </div>
         <div>
           <h3>Disclose the conflict.</h3>
-          <p>If the answer is yes, I could be a candidate to run the office as its Chief Investment Officer. I say so at the first meeting.</p>
+          <p>If the answer is yes, I could be a candidate to run the office or serve as its Chief Investment Officer. I say so at the first meeting, and my fee is the same whatever the verdict.</p>
         </div>
       </div>
     </div>
@@ -327,7 +336,7 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
     <div class="wrap teaser">
       <h2 class="display">Matt Parker</h2>
       <div>
-        <p>I have spent my career on the investment side of wealth: trading derivatives at Deutsche Bank and BNP Paribas, advising clients in private banking at J.P. Morgan, and representing two single family offices with more than $3 billion in assets through Sound &amp; Fury. Most recently I was a Partner and the Chief Compliance Officer of Search Fund Accelerator.</p>
+        <p>I have spent my career on the investment side of wealth: trading derivatives at Deutsche Bank and BNP Paribas, advising clients in private banking at J.P. Morgan, and advising two single family offices through Sound &amp; Fury, one of them across its entire investment portfolio. Most recently I was a Partner and the Chief Compliance Officer of Search Fund Accelerator.</p>
         <a class="textlink" href="about.html">More about me and the name</a>
       </div>
     </div>
@@ -337,7 +346,7 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
     <div class="wrap">
       <h2 class="display" style="margin-bottom: 36px">Start with a conversation.</h2>
       <a class="big" href="mailto:matt@soundandfuryconsulting.com">matt@soundandfuryconsulting.com</a>
-      <p>Or call 601-310-4115.</p>
+      <p>Or call <a href="tel:+16013104115">601-310-4115</a>.</p>
     </div>
   </section>
 </main>
@@ -346,12 +355,12 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
   <div class="wrap">
     <div class="row">
       <span>Sound and Fury, LLC, Covington, Louisiana</span>
-      <span><a href="mailto:matt@soundandfuryconsulting.com">matt@soundandfuryconsulting.com</a> &nbsp; 601-310-4115</span>
+      <span><a href="mailto:matt@soundandfuryconsulting.com">matt@soundandfuryconsulting.com</a> &nbsp; <a href="tel:+16013104115">601-310-4115</a></span>
     </div>
     <!-- AFTER REGISTRATION: replace the legal paragraph below with:
     <p class="legal">Sound and Fury, LLC is an investment adviser registered with the State of Louisiana. Registration does not imply a certain level of skill or training. Form ADV Part 2A is available on request.</p>
     -->
-    <p class="legal">Sound &amp; Fury Consulting provides consulting on family office structure, governance, and reporting. It does not provide investment advice, manage assets, or sell securities. The consolidated balance sheet reports a family's existing holdings and does not recommend any investment.</p>
+    <p class="legal">Sound &amp; Fury Consulting provides consulting on family office structure, governance, and reporting. It does not provide investment advice, manage assets, or sell securities. The consolidated balance sheet reports a family's existing holdings and does not recommend any investment. Any role with a family's own office is a separate arrangement made by that family.</p>
   </div>
 </footer>
 </body>
