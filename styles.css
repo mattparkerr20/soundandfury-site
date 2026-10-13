@@ -47,7 +47,7 @@ section { padding: 104px 0; }
 
 /* Hero */
 .hero { padding: 48px 0 88px; text-align: center; }
-.hero h1.quote { font-size: clamp(36px, 5.6vw, 76px); }
+.hero h1.quote { font-size: clamp(30px, 4.2vw, 58px); line-height: 1.08; max-width: 18em; margin: 0 auto; }
 .hero h1.quote span { display: block; }
 
 .hero .attrib { font-family: var(--display); font-weight: 600; font-size: 17px; color: var(--sky); margin: 20px 0 0; }
