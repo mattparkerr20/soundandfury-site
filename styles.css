@@ -211,8 +211,8 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
 
 /* Responsive */
 @media (max-width: 960px) {
-  .pile-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .v-grid, .ex-grid { grid-template-columns: 1fr; gap: 24px; }
+  .pile-grid, .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .v-grid, .ex-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
@@ -224,8 +224,8 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
   .hero { padding: 24px 0 60px; }
   .hero p.pitch, .lede, .page-head p { font-size: 18px; }
   .page-head h1 { font-size: clamp(28px, 8.6vw, 38px); }
-  .principles .grid, .two, .services { grid-template-columns: 1fr; gap: 40px; }
-  .steps { grid-template-columns: 1fr; }
+  .principles .grid, .two, .services { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
   .pile { height: 360px; }
   .stmt { width: 210px; padding: 12px 14px; }
   .stmt:nth-child(1) { top: 0; left: 0; }
