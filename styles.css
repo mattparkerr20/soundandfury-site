@@ -239,3 +239,7 @@ blockquote.macbeth cite { display: block; margin-top: 18px; font-family: var(--b
   .facts li { grid-template-columns: 1fr; gap: 4px; }
   .checks li { grid-template-columns: 84px minmax(0, 1fr); gap: 12px; }
 }
+
+.verdict .buys { font-size: 17px; margin: 0 0 22px; }
+.question .fee-num { margin: 20px 0 8px; }
+.question .wrap > p { max-width: 38em; margin-left: auto; margin-right: auto; }
